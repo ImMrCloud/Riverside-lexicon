@@ -39,14 +39,14 @@ export function AvailableTags(props: Props) {
     if (isSearchSelected) {
       //input value in search text field is selected
       searchSpecialCase = (
-        <TagItem tagName={searchTag} rightLabel={t('selected')} />
+        <TagItem tagName={searchTag} rightLabel={t('选中')} />
       );
     } else if (!tags.find(({ id }) => id === searchTag) && canCreateTag) {
       //input value in search text field is not found, but user can create that tag
       searchSpecialCase = (
         <TagItem
           tagName={searchTag}
-          rightLabel={t('create tag')}
+          rightLabel={t('创建标签')}
           onItemPress={onCreateTag}
         />
       );
@@ -59,10 +59,10 @@ export function AvailableTags(props: Props) {
         {!loading ? (
           <Text>
             {!canCreateTag
-              ? t('No existing tags were found.')
+              ? t('没有找到已存在的标签')
               : searchTag === ''
               ? t(
-                  'No existing tags were found. Create one by typing it in the search bar above.',
+                  '未找到相关标签 在上方搜索并回车即可创建',
                 )
               : null}
           </Text>
@@ -74,12 +74,12 @@ export function AvailableTags(props: Props) {
 
   return (
     <View {...otherProps}>
-      <Text variant="bold">{searchTag ? t('Results') : t('Popular Tags')}</Text>
+      <Text variant="bold">{searchTag ? t('结果') : t('热门标签')}</Text>
       {!searchTag && tags.length > 0 && (
         <Text size="s" style={styles.smallText}>
           {canCreateTag
-            ? t('Use the search bar to discover more tags or create a new one.')
-            : t('Use the search bar to discover more tags.')}
+            ? t('U使用搜索栏发现更多标签或者创建一个')
+            : t('使用搜索栏发现更多标签')}
         </Text>
       )}
 

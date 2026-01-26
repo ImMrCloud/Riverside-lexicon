@@ -200,9 +200,9 @@ export default function EditProfile(props: ProfileProps) {
         });
         getProfile({ variables: { username } });
         Alert.alert(
-          t('Success!'),
-          t('Profile has been updated!'),
-          [{ text: t('Got it') }],
+          t('成功!'),
+          t('阁下的资料已被成功上传!'),
+          [{ text: t('明白') }],
           { cancelable: false },
         );
       }
@@ -299,19 +299,19 @@ export default function EditProfile(props: ProfileProps) {
               },
             });
           } else {
-            Alert.alert(t('Failed Upload!'), t(`Please Try Again`), [
-              { text: t('Got it') },
+            Alert.alert(t('上传失败'), t(`请重试`), [
+              { text: t('明白') },
             ]);
           }
 
           setNoChanges(false);
         } else {
           Alert.alert(
-            t('Failed!'),
-            t(`Please upload image with {stringifyExtensions} format`, {
+            t('失败了!'),
+            t(`请以 {stringifyExtensions} 格式上传文件`, {
               stringifyExtensions,
             }),
-            [{ text: t('Got it') }],
+            [{ text: t('明白') }],
           );
         }
       }
@@ -356,7 +356,7 @@ export default function EditProfile(props: ProfileProps) {
     >
       <ScrollView ref={scrollViewRef} testID="EditProfile:ScrollView">
         <CustomHeader
-          title={isTablet ? t('Edit Profile') : ''}
+          title={isTablet ? t('编辑资料') : ''}
           rightTitle="Save"
           onPressRight={onPressRight}
           noShadow={!isTablet}
@@ -388,7 +388,7 @@ export default function EditProfile(props: ProfileProps) {
             disabled={uploadLoading || editProfileLoading}
           >
             <Text color={!uploadLoading ? 'primary' : 'textLighter'}>
-              {t('Change Picture')}
+              {t('修改图片')}
             </Text>
           </TouchableOpacity>
         </View>
@@ -402,7 +402,7 @@ export default function EditProfile(props: ProfileProps) {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <TextInput
-                  label={t('Username')}
+                  label={t('用户名')}
                   error={errors.username != null}
                   errorMsg={errors.username?.message}
                   value={value}
@@ -436,7 +436,7 @@ export default function EditProfile(props: ProfileProps) {
               render={({ field: { onChange, value } }) => (
                 <TextInput
                   inputRef={nameInputRef}
-                  label={t('Name')}
+                  label={t('名称')}
                   error={errors.name != null}
                   value={value}
                   onChangeText={(text) => {
@@ -462,8 +462,8 @@ export default function EditProfile(props: ProfileProps) {
               render={({ field: { onChange, value } }) => (
                 <TextInput
                   inputRef={websiteInputRef}
-                  label={t('Website')}
-                  placeholder={t('Insert your website')}
+                  label={t('网页')}
+                  placeholder={t('插入阁下的网页')}
                   error={errors.website != null}
                   value={value}
                   onChangeText={(text) => {
@@ -488,8 +488,8 @@ export default function EditProfile(props: ProfileProps) {
               render={({ field: { onChange, value } }) => (
                 <TextInput
                   inputRef={bioInputRef}
-                  label={t('Bio')}
-                  placeholder={t('Insert your bio')}
+                  label={t('自传')}
+                  placeholder={t('插入阁下的自传')}
                   error={errors.bio != null}
                   value={value}
                   onChangeText={(text) => {
@@ -514,8 +514,8 @@ export default function EditProfile(props: ProfileProps) {
               render={({ field: { onChange, value } }) => (
                 <TextInput
                   inputRef={locationInputRef}
-                  label={t('Location')}
-                  placeholder={t('Insert your location')}
+                  label={t('地址')}
+                  placeholder={t('插入阁下的地址')}
                   error={errors.location != null}
                   value={value}
                   onChangeText={(text) => {

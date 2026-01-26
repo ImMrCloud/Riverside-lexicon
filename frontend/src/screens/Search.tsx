@@ -152,16 +152,16 @@ export default function Search() {
   const resultInfo = () => {
     let message = '';
     if (skipSearchStatus) {
-      message = t('Your query must be at least {minLength} characters long', {
+      message = t('查询内容的长度至少为 {minLength} 个字符', {
         minLength: minSearchLength,
       });
     } else {
       if (count === 0) {
-        message = t('No results found for ');
+        message = t('未能查询到相关结果');
       } else {
-        message = t('Showing {count} {result} for ', {
+        message = t('正在显示 {count} {result} 结果， ', {
           count,
-          result: count === 1 ? 'result' : 'results',
+          result: count === 1 ? '条' : '条',
         });
       }
     }
@@ -193,9 +193,9 @@ export default function Search() {
           style={styles.searchTextInput}
           value={searchValue}
           onChangeText={onChangeValue}
-          placeholder={t('Search for ...')}
+          placeholder={t('搜索 ...')}
           placeholderTextColor={colors.textLighter}
-          keyboardType="visible-password" // To remove underline at every words on Android
+          keyboardType="web-search"
           testID="Search:TextInput:Query"
         />
         {searchValue !== '' && (

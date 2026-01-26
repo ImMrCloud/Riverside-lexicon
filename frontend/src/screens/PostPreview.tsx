@@ -276,17 +276,17 @@ export default function PostPreview() {
   return (
     <SafeAreaView style={styles.container}>
       <CustomHeader
-        title={t('Preview')}
+        title={t('预览')}
         rightIcon="Send"
         onPressRight={postToServer}
         isLoading={loading}
       />
       {ios && (
         <ModalHeader
-          title={t('Preview')}
+          title={t('预览')}
           left={
             <HeaderItem
-              label={t('Cancel')}
+              label={t('取消')}
               onPressItem={goBack}
               disabled={loading}
               left
@@ -294,7 +294,7 @@ export default function PostPreview() {
           }
           right={
             <HeaderItem
-              label={t('Post')}
+              label={t('发布')}
               onPressItem={postToServer}
               loading={loading}
             />

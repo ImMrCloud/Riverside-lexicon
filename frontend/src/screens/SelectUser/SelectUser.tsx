@@ -102,10 +102,10 @@ export default function SelectUser() {
         return;
       }
       e.preventDefault();
-      Alert.alert(t('Discard?'), t('Are you sure you want to discard?'), [
-        { text: t('Cancel') },
+      Alert.alert(t('舍弃'), t('阁下确定要舍弃吗？'), [
+        { text: t('取消') },
         {
-          text: t('Discard'),
+          text: t('舍弃'),
           onPress: () => navigation.dispatch(e.data.action),
         },
       ]);
@@ -129,15 +129,15 @@ export default function SelectUser() {
 
   const Header = () => {
     const headerTitle =
-      count > 0 ? t('{count} Selected', { count }) : t('Select Users');
+      count > 0 ? t('已选择 {count} 人', { count }) : t('选择用户');
 
     return ios ? (
       <ModalHeader
-        title={count > 0 ? count + t(' Selected') : t('Select Users')}
-        left={<HeaderItem label={t('Cancel')} onPressItem={goBack} left />}
+        title={count > 0 ? count + t(' 已选择') : t('选择用户')}
+        left={<HeaderItem label={t('取消')} onPressItem={goBack} left />}
         right={
           <HeaderItem
-            label={t('Done')}
+            label={t('确定')}
             onPressItem={doneSelectingUser}
             loading={searchValue.length > 0 && loading}
             disabled={selectedUsers.length === 0}
@@ -158,14 +158,14 @@ export default function SelectUser() {
           style={styles.searchTextInput}
           value={searchValue}
           onChangeText={setSearchValue}
-          placeholder={t('Search for ...')}
+          placeholder={t('搜索...')}
           placeholderTextColor={colors.textLighter}
         />
       </View>
       {selectedUsers.length < 1 && (
         <View>
           <Text style={[styles.noUser, { paddingTop: spacing.s }]}>
-            {t('Find Users with the Search Bar above.')}
+            {t('通过搜索栏找到用户')}
           </Text>
           <Divider style={styles.divider} />
         </View>

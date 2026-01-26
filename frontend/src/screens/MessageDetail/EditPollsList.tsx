@@ -40,7 +40,7 @@ export default function EditPollsList() {
     return ios ? (
       <ModalHeader
         title={title}
-        left={<HeaderItem label={t('Close')} left onPressItem={goBack} />}
+        left={<HeaderItem label={t('关闭')} left onPressItem={goBack} />}
       />
     ) : (
       <CustomHeader title={title} noShadow />
@@ -62,7 +62,7 @@ export default function EditPollsList() {
               })}
             </Text>
             <Text size="s" color="lightTextDarker">
-              {t('{total} options', { total: item.pollOptions.length })}
+              {t('{total} 选项', { total: item.pollOptions.length })}
             </Text>
           </View>
           <View style={styles.iconContainer}>

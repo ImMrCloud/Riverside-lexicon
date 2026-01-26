@@ -28,7 +28,7 @@ export function PostItemFooter(props: Props) {
           <Divider style={styles.spacingBottom} />
           <AvatarRow
             posters={frequentPosters}
-            title={t('Top Participants')}
+            title={t('活跃成员')}
             titleStyle={styles.textFreqPoster}
           />
         </>

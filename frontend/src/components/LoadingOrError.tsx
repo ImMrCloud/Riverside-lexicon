@@ -28,8 +28,8 @@ export function LoadingOrErrorView(props: Props) {
   const {
     loading = false,
     message = loading
-      ? t('Loading...')
-      : t('Something unexpected happened. Please try again'),
+      ? t('加载中，请稍后...')
+      : t('发生了一些错误，请稍后重试\n这一般是由于服务器响应发生错误，阁下可以试试稍后刷新此页面，当然重新登录应该会解决此问题。'),
     style,
     onRefresh,
     refreshing,

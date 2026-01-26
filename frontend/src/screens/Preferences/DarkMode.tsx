@@ -25,11 +25,11 @@ export default function DarkMode() {
   const Header = () =>
     ios ? (
       <ModalHeader
-        title={t('Dark Mode')}
-        left={<HeaderItem label={t('Back')} left onPressItem={goBack} />}
+        title={t('晚黑模式')}
+        left={<HeaderItem label={t('返回')} left onPressItem={goBack} />}
       />
     ) : (
-      <CustomHeader title={t('Dark Mode')} />
+      <CustomHeader title={t('晚黑模式')} />
     );
 
   const changeColorScheme = (colorScheme: ColorScheme) => {
@@ -44,17 +44,17 @@ export default function DarkMode() {
         <View style={styles.bodyContainer}>
           <View style={styles.menuContainer}>
             <SettingsItem
-              title={t('On')}
+              title={t('开启')}
               onPress={() => changeColorScheme('dark')}
               selected={cachedColorScheme === 'dark'}
             />
             <SettingsItem
-              title={t('Off')}
+              title={t('关闭')}
               onPress={() => changeColorScheme('light')}
               selected={cachedColorScheme === 'light'}
             />
             <SettingsItem
-              title={t('System')}
+              title={t('跟随系统决定')}
               onPress={() => changeColorScheme('no-preference')}
               selected={cachedColorScheme === 'no-preference'}
             />

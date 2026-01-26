@@ -35,8 +35,8 @@ export function isChannelFilter(channelId: number) {
 export const NO_CHANNEL_FILTER = {
   id: NO_CHANNEL_FILTER_ID,
   color,
-  description: t(`Browse topics across all channels`),
-  name: t(`All Channels`),
+  description: t(`浏览所有频道的任何内容`),
+  name: t(`所有频道`),
 };
 
 export const DEFAULT_NOTIFICATION_BEHAVIOUR = {

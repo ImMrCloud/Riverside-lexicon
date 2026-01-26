@@ -524,8 +524,8 @@ export default function MessageDetail() {
             },
           });
         } else {
-          Alert.alert(t('Failed Upload!'), t(`Please Try Again`), [
-            { text: t('Got it') },
+          Alert.alert(t('上传失败'), t(`请重试`), [
+            { text: t('明白') },
           ]);
         }
       } catch (unknownError) {
@@ -694,13 +694,13 @@ export default function MessageDetail() {
       <ScrollView keyboardShouldPersistTaps="handled">
         <MenuItem
           iconName="Link"
-          text={t('Add Link')}
+          text={t('添加链接')}
           onPress={onPressLink}
           testID="ToolTip:MenuItem:Link"
         />
         <MenuItem
           iconName="Photo"
-          text={t('Add Image')}
+          text={t('添加图像')}
           onPress={() => {
             onPressImage({ isShowPicker: true });
           }}
@@ -708,7 +708,7 @@ export default function MessageDetail() {
         />
         <MenuItem
           iconName="Chart"
-          text={t('Add Poll')}
+          text={t('添加投票')}
           onPress={onPressPoll}
           testID="ToolTip:MenuItem:Poll"
         />
@@ -961,9 +961,9 @@ export default function MessageDetail() {
     let options: ActionSheetProps['options'] = [];
 
     if (ios) {
-      options.push({ label: t('Cancel') });
+      options.push({ label: t('取消') });
     }
-    options.push({ label: t('Leave Message') });
+    options.push({ label: t('留言') });
 
     return options;
   };
@@ -971,12 +971,12 @@ export default function MessageDetail() {
   const actionItemOnPress = (btnIndex: number) => {
     if (btnIndex === 0) {
       return Alert.alert(
-        t('Leave Message?'),
-        t('Are you sure you want to leave this message?'),
+        t('留言?'),
+        t('阁下确定要在此处留言吗?'),
         [
-          { text: t('Cancel') },
+          { text: t('取消') },
           {
-            text: t('Leave'),
+            text: t('留言'),
             onPress: onLeaveMessage,
           },
         ],
@@ -990,7 +990,7 @@ export default function MessageDetail() {
 
   const Header = canLeaveMessage ? (
     <CustomHeader
-      title={t('Message')}
+      title={t('消息')}
       rightIcon="More"
       onPressRight={onPressMore}
       disabled={
@@ -1005,7 +1005,7 @@ export default function MessageDetail() {
     return (
       <SafeAreaView style={styles.container}>
         {Header}
-        <LoadingOrError message={errorHandler(error, true, t('message'))} />
+        <LoadingOrError message={errorHandler(error, true, t('消息'))} />
       </SafeAreaView>
     );
   }

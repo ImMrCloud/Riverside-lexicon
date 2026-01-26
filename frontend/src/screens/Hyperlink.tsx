@@ -69,11 +69,11 @@ export default function Hyperlink() {
     <SafeAreaView style={styles.container}>
       {ios ? (
         <ModalHeader
-          title={t('Insert Hyperlink')}
-          left={<HeaderItem label={t('Cancel')} onPressItem={goBack} left />}
+          title={t('插入超链接')}
+          left={<HeaderItem label={t('取消')} onPressItem={goBack} left />}
           right={
             <HeaderItem
-              label={t('Add')}
+              label={t('添加')}
               onPressItem={onPressAdd}
               disabled={!formState.isValid}
             />
@@ -81,8 +81,8 @@ export default function Hyperlink() {
         />
       ) : (
         <CustomHeader
-          title={t('Insert Hyperlink')}
-          rightTitle={t('Add')}
+          title={t('插入超链接')}
+          rightTitle={t('添加')}
           onPressRight={onPressAdd}
           disabled={!formState.isValid}
           noShadow
@@ -97,7 +97,7 @@ export default function Hyperlink() {
           render={({ field: { value, onChange, onBlur } }) => (
             <TextInput
               label={t('URL')}
-              placeholder={t('Insert URL')}
+              placeholder={t('插入 URL')}
               error={errors.url != null}
               value={value}
               onChangeText={onChange}
@@ -117,8 +117,8 @@ export default function Hyperlink() {
           render={({ field: { value, onChange, onBlur } }) => (
             <TextInput
               inputRef={titleInputRef}
-              label={t('Title (Optional)')}
-              placeholder={t('Insert Title')}
+              label={t('标题（可选）')}
+              placeholder={t('插入标题')}
               error={errors.title != null}
               value={value}
               onChangeText={onChange}

@@ -49,11 +49,11 @@ export default function Channels() {
     <SafeAreaView style={styles.container}>
       {ios ? (
         <ModalHeader
-          title={t('Channels')}
-          left={<HeaderItem label={t('Cancel')} onPressItem={goBack} left />}
+          title={t('频道')}
+          left={<HeaderItem label={t('取消')} onPressItem={goBack} left />}
         />
       ) : (
-        <CustomHeader title={t('Channels')} noShadow />
+        <CustomHeader title={t('频道')} noShadow />
       )}
 
       <ScrollView>

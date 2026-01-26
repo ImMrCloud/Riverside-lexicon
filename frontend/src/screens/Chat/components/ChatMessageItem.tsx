@@ -69,10 +69,10 @@ export function ChatMessageItem(props: Props) {
           style={styles.unsupportedIcon}
         />
         <Text size="xs" color="textLight" style={styles.unsupportedText}>
-          {t('Unsupported file type.')}
+          {t('不支持的文件类型')}
         </Text>
         <Text size="xs" color="textLight" style={styles.unsupportedText}>
-          {t('To open, please visit Discourse web.')}
+          {t('为了打开此文件，阁下需要访问网页版论坛')}
         </Text>
       </View>
     );
@@ -158,7 +158,7 @@ export function ChatMessageItem(props: Props) {
         {unread && (
           <View style={styles.unread}>
             <Text color="textLight" size="xs" style={styles.time}>
-              {t('Unread Messages')}
+              {t('未读消息')}
             </Text>
           </View>
         )}

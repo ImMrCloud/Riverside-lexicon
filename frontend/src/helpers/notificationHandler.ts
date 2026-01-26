@@ -166,7 +166,7 @@ export function notificationHandler(
         break;
       }
       default: {
-        message = t(`Unknown notification ({notificationType})`, {
+        message = t(`未知的通知类型 ({notificationType})`, {
           notificationType,
         });
       }
@@ -182,62 +182,62 @@ export function notificationHandler(
           // TODO : Do more research about more notificationTypes
           case NotificationType.Mention:
           case NotificationType.GroupMention: {
-            message = t('Mentioned you in ') + topicTitle;
+            message = t('在下面的帖子提到了阁下：') + topicTitle;
             break;
           }
           case NotificationType.ReplyPost: {
-            message = t('Replied to your post on ') + topicTitle;
+            message = t('在下面的帖子回复了阁下：') + topicTitle;
             break;
           }
           case NotificationType.QuotePost: {
-            message = t('Quote your post on ') + topicTitle;
+            message = t('在下面的帖子中引用了阁下的帖子：') + topicTitle;
             break;
           }
           case NotificationType.EditPost: {
-            message = t('Edited your post on ') + topicTitle;
+            message = t('在下面的帖子中编辑了阁下的帖子：') + topicTitle;
             break;
           }
           case NotificationType.LikePost: {
-            message = t('Liked your post on ') + topicTitle;
+            message = t('在下面的帖子中赞了阁下的帖子：') + topicTitle;
             break;
           }
           case NotificationType.SendMessage: {
-            message = t('Sent you a message');
+            message = t('发送给阁下一条消息');
             break;
           }
           case NotificationType.InviteMessage:
           case NotificationType.InviteTopic: {
-            message = t('Invited you to join ') + topicTitle;
+            message = t('邀请阁下加入') + topicTitle;
             break;
           }
           case NotificationType.ReplyMessage: {
-            message = t('Replied to post on ') + topicTitle;
+            message = t('回复了阁下的帖子') + topicTitle;
             break;
           }
           case NotificationType.MovePost: {
-            message = t('Moved your post from {topicTitle}', {
+            message = t('从 {topicTitle} 移动了阁下的帖子', {
               topicTitle,
             });
             break;
           }
           case NotificationType.LinkPost: {
-            message = t('Linked your post on ') + topicTitle;
+            message = t('在下面的帖子中链接了阁下的帖子：') + topicTitle;
             break;
           }
           case NotificationType.WatchingTopic: {
-            message = t('Watching ') + topicTitle;
+            message = t('正在关注') + topicTitle;
             break;
           }
           case NotificationType.TopicReminder: {
-            message = t('Topic reminder on ') + topicTitle;
+            message = t('关于阁下的主题提醒：') + topicTitle;
             break;
           }
           case NotificationType.LikeMultiplePosts: {
-            message = t('Liked {count} of your posts', { count });
+            message = t('赞了 {count} 篇阁下的帖子', { count });
             break;
           }
           case NotificationType.BookmarkReminder: {
-            message = t('Bookmark reminder on ') + topicTitle;
+            message = t('关于阁下的书签提醒：') + topicTitle;
             break;
           }
           case NotificationType.WatchingCategoryOrTag: {
@@ -291,7 +291,7 @@ export function notificationHandler(
           id,
           badgeId: data.badgeId || undefined,
           name: data.badgeName || '',
-          message: 'Got a new badge',
+          message: '获得了新的徽章',
           createdAt,
           seen,
           notificationType,

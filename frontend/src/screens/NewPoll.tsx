@@ -300,9 +300,9 @@ export default function NewPoll() {
   const Header = () =>
     ios ? (
       <ModalHeader
-        title={t('Poll')}
+        title={t('投票')}
         left={
-          <HeaderItem label={t('Cancel')} left onPressItem={cancelAddPoll} />
+          <HeaderItem label={t('取消')} left onPressItem={cancelAddPoll} />
         }
         right={
           <HeaderItem
@@ -313,7 +313,7 @@ export default function NewPoll() {
         }
       />
     ) : (
-      <CustomHeader title={t('Poll')} noShadow />
+      <CustomHeader title={t('投票')} noShadow />
     );
 
   return (
@@ -385,7 +385,7 @@ export default function NewPoll() {
               }}
               render={({ field: { value, onChange, onBlur } }) => (
                 <TextInput
-                  label={t('Min. Choices')}
+                  label={t('最少选择')}
                   value={`${value}`}
                   onChangeText={(text) => {
                     const parsed = parseInt(text);
@@ -425,7 +425,7 @@ export default function NewPoll() {
               }}
               render={({ field: { value, onChange, onBlur } }) => (
                 <TextInput
-                  label={t('Max Choices')}
+                  label={t('最多选择')}
                   value={`${value}`}
                   onChangeText={(text) => {
                     const parsed = parseInt(text);
@@ -459,7 +459,7 @@ export default function NewPoll() {
                 control={control}
                 render={({ field: { value, onChange, onBlur } }) => (
                   <TextInput
-                    label={t('Steps')}
+                    label={t('步骤')}
                     value={`${value}`}
                     onChangeText={(text) => {
                       const parsed = parseInt(text);
@@ -489,7 +489,7 @@ export default function NewPoll() {
             >
               <Icon name="Ballot" color={colors.textLighter} />
               <Text color="lightTextDarker" style={styles.dropdownHeaderText}>
-                {t('Options')}
+                {t('选项')}
               </Text>
               <Icon
                 name={showOptions ? 'ExpandLess' : 'ExpandMore'}
@@ -515,7 +515,7 @@ export default function NewPoll() {
                       control={control}
                       render={({ field: { value, onChange, onBlur } }) => (
                         <TextInput
-                          placeholder={t('Option')}
+                          placeholder={t('选项')}
                           value={
                             typeof value === 'string' ? value : value.option
                           }
@@ -560,7 +560,7 @@ export default function NewPoll() {
                 >
                   <Icon name="Add" />
                   <Text color="primary" style={styles.addOptionText}>
-                    {t('Add Option')}
+                    {t('添加选项')}
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -579,7 +579,7 @@ export default function NewPoll() {
           >
             <Icon name="Settings" color={colors.textLighter} />
             <Text color="lightTextDarker" style={styles.dropdownHeaderText}>
-              {t('Advanced Settings')}
+              {t('高级选项')}
             </Text>
             <Icon
               name={showAdvancedSetting ? 'ExpandLess' : 'ExpandMore'}
@@ -594,7 +594,7 @@ export default function NewPoll() {
                 control={control}
                 render={({ field: { value, onChange, onBlur } }) => (
                   <TextInput
-                    label={t('Title (Optional)')}
+                    label={t('标题（可选）')}
                     value={value || ''}
                     onChangeText={onChange}
                     onBlur={onBlur}
@@ -611,7 +611,7 @@ export default function NewPoll() {
                 render={({ field: { value, onChange } }) => {
                   return (
                     <Dropdown
-                      label={t('Limit voting to these groups')}
+                      label={t('限制以下人群投票')}
                       selectedIndex={
                         value.length > 0
                           ? value.map((dataSelected) => {
@@ -622,7 +622,7 @@ export default function NewPoll() {
                             })
                           : []
                       }
-                      placeholder={t('Select...')}
+                      placeholder={t('选择...')}
                       options={groupsDropdownOptions}
                       onSelect={(option) => {
                         let oldGroups = getPollValues('groups') || [];
@@ -642,7 +642,7 @@ export default function NewPoll() {
               />
               <View style={styles.advacedSettingInput}>
                 <Text size="s" color="textLight" style={styles.datePickerLabel}>
-                  {t('Automatically close poll')}
+                  {t('自动关闭投票')}
                 </Text>
                 <View style={styles.row}>
                   <DropdownTextInput
@@ -684,7 +684,7 @@ export default function NewPoll() {
                   style={styles.radioButton}
                   checkCircleIcon={true}
                 >
-                  <Text>{t('Never close poll')}</Text>
+                  <Text>{t('永不关闭投票')}</Text>
                 </RadioButton>
               </View>
               <Controller
@@ -738,7 +738,7 @@ export default function NewPoll() {
                 control={control}
                 render={({ field: { value, onChange } }) => (
                   <Dropdown
-                    label={t('Show results')}
+                    label={t('显示结果')}
                     selectedIndex={value}
                     options={RESULTS_DROPDOWN_OPTIONS}
                     onSelect={(_, index) => {
@@ -754,7 +754,7 @@ export default function NewPoll() {
                   control={control}
                   render={({ field: { value, onChange } }) => (
                     <Dropdown
-                      label={t('Results chart')}
+                      label={t('结果表')}
                       selectedIndex={value}
                       options={CHART_TYPE_DROPDOWN_OPTIONS}
                       onSelect={(_, index) => {
@@ -778,7 +778,7 @@ export default function NewPoll() {
                         style={styles.radioButton}
                         checkCircleIcon={true}
                       >
-                        <Text>{t('Show who voted')}</Text>
+                        <Text>{t('让阁下看看那些人投了票')}</Text>
                       </RadioButton>
                     );
                   }}
@@ -797,7 +797,7 @@ export default function NewPoll() {
           style={styles.container}
         >
           <Button
-            content={t('Done')}
+            content={t('完成')}
             large
             onPress={addPoll}
             style={styles.bottomMenu}

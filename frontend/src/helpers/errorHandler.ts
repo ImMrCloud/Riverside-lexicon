@@ -59,7 +59,7 @@ export function errorHandler(
   }
 
   if (shouldMaskError) {
-    return t('Something unexpected happened. Please try again.');
+    return t('发生了一些错误，请稍后重试\n这一般是由于服务器响应发生错误，阁下可以试试稍后刷新此页面，当然重新登录应该会解决此问题。');
   }
 
   return message;
@@ -84,31 +84,31 @@ export function errorHandlerAlert(
   let alertTitle;
   switch (errorMsg) {
     case LoginError:
-      Alert.alert(t('Please Log In'), errorMsg, [
-        { text: t('Close') },
+      Alert.alert(t('请阁下登录'), errorMsg, [
+        { text: t('关闭') },
         {
-          text: t('Log In'),
+          text: t('登录'),
           onPress: () => (navigate ? navigate('Welcome') : undefined),
         },
       ]);
       return;
     case UsedTitleError:
       Alert.alert(
-        t('Title Already Exists'),
+        t('标题已经存在'),
         t(
-          'A Post with this title has already been created. Please use a different title.',
+          '已存在相同标题的帖子，请尝试使用其他标题。',
         ),
-        [{ text: t('Got it') }],
+        [{ text: t('明白了！') }],
       );
       return;
     case EditPostError:
-      alertTitle = t('Unable to Edit');
+      alertTitle = t('无法编辑');
       break;
     case ChangeUsernameError:
-      alertTitle = t('Username Unavailable');
+      alertTitle = t('用户名不可用');
       break;
     default:
-      alertTitle = t('Error');
+      alertTitle = t('错误');
   }
-  Alert.alert(alertTitle, stripHTML(errorMsg), [{ text: t('Got it') }]);
+  Alert.alert(alertTitle, stripHTML(errorMsg), [{ text: t('明白了！') }]);
 }

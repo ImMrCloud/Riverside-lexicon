@@ -48,8 +48,8 @@ export default function FlagPost() {
   const { flag, loading } = useFlagPost({
     onCompleted: () => {
       Alert.alert(
-        t('The post has been flagged successfully'),
-        t('Please wait until the admin process the request'),
+        t('阁下已成功举报'),
+        t('请等待管理员进行处理'),
         [
           {
             text: t('Got it'),
@@ -79,11 +79,11 @@ export default function FlagPost() {
     <View style={styles.container}>
       {ios ? (
         <ModalHeader
-          title={t('Flag')}
-          left={<HeaderItem left label={t('Cancel')} onPressItem={goBack} />}
+          title={t('举报')}
+          left={<HeaderItem left label={t('取消')} onPressItem={goBack} />}
           right={
             <HeaderItem
-              label={t('Report')}
+              label={t('报告')}
               onPressItem={onSubmit}
               disabled={!checked}
               loading={loading}
@@ -91,11 +91,11 @@ export default function FlagPost() {
           }
         />
       ) : (
-        <CustomHeader title={t('Flag')} noShadow />
+        <CustomHeader title={t('举报')} noShadow />
       )}
       <KeyboardTextAreaScrollView>
         <View style={styles.textContainer}>
-          <Text>{t('Please tell us why you want to flag this post.')}</Text>
+          <Text>{t('请阁下描述该贴受举报的原因')}</Text>
         </View>
         <ScrollView contentContainerStyle={styles.radioGroup}>
           {isPost
@@ -164,7 +164,7 @@ export default function FlagPost() {
         </ScrollView>
         {!ios && (
           <Button
-            content={t('Flag Post')}
+            content={t('发送举报')}
             style={styles.submitButton}
             onPress={onSubmit}
             loading={loading}

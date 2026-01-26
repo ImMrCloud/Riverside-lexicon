@@ -342,9 +342,9 @@ export default function ChatChannelDetail() {
     let options: ActionSheetProps['options'] = [];
 
     if (ios) {
-      options.push({ label: t('Cancel') });
+      options.push({ label: t('取消') });
     }
-    options.push({ label: t('Leave Channel') });
+    options.push({ label: t('离开频道') });
 
     return options;
   };
@@ -352,12 +352,12 @@ export default function ChatChannelDetail() {
   const actionItemOnPress = (btnIndex: number) => {
     if (btnIndex === 0) {
       return Alert.alert(
-        t('Leave Channel?'),
-        t('Are you sure you want to leave this channel?'),
+        t('离开频道？'),
+        t('阁下确定想要离开这个频道？'),
         [
-          { text: t('Cancel') },
+          { text: t('取消') },
           {
-            text: t('Leave'),
+            text: t('离开'),
             onPress: () => {
               leaveChannel({ variables: { channelId } });
             },
@@ -425,8 +425,8 @@ export default function ChatChannelDetail() {
           0;
 
         return count > 1
-          ? t('{count} members', { count })
-          : t('{count} member', { count });
+          ? t('{count} 成员', { count })
+          : t('{count} 成员', { count });
       })()}
       rightIcon="More"
       onPressRight={onPressMore}

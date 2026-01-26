@@ -43,23 +43,23 @@ export default function EditUserStatus() {
 
   const SelectionList = useMemo(
     () => [
-      { id: 1, label: t('Never') },
+      { id: 1, label: t('从不') },
       {
         id: 2,
-        label: t('in 1 hour'),
+        label: t('1小事内'),
         value: addHour({ dateString: Date.now(), hour: 1 }),
       },
       {
         id: 3,
-        label: t('in 2 hours'),
+        label: t('2小时内'),
         value: addHour({ dateString: Date.now(), hour: 2 }),
       },
       {
         id: 4,
-        label: t('Tomorrow'),
+        label: t('明天'),
         value: addHour({ dateString: Date.now(), hour: 24 }),
       },
-      { id: 5, label: t('Custom date & time') },
+      { id: 5, label: t('自定日期和时间') },
     ],
     [],
   );
@@ -166,15 +166,15 @@ export default function EditUserStatus() {
 
   const showAlert = () =>
     Alert.alert(
-      t('Delete Status?'),
-      t('Are you sure you want to delete your status?'),
+      t('删除状态'),
+      t('阁下确定想要删除状态？'),
       [
         {
-          text: t('Cancel'),
+          text: t('取消'),
           onPress: () => {},
         },
         {
-          text: t('Delete'),
+          text: t('删除'),
           onPress: onDelete,
         },
       ],
@@ -255,7 +255,7 @@ export default function EditUserStatus() {
                   {isCustomDate && selectedCheck === id && (
                     <View style={styles.dateTimeButtonContainer}>
                       <DateTimeButton
-                        label={t('Select date')}
+                        label={t('选择日期')}
                         text={formatDateTime(
                           getValues('datePicker')?.toISOString() || '',
                           'short',
@@ -266,7 +266,7 @@ export default function EditUserStatus() {
                         }}
                       />
                       <DateTimeButton
-                        label={t('Select time')}
+                        label={t('选择时间')}
                         text={formatTime({
                           dateString:
                             getValues('datePicker')?.toISOString() || '',
@@ -286,7 +286,7 @@ export default function EditUserStatus() {
 
           <View style={styles.deleteButtonContainer}>
             <Button
-              content={t('Delete Status')}
+              content={t('删除状态')}
               style={styles.deleteButton}
               textColor="warnText"
               onPress={() => {

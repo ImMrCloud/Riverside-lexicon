@@ -17,11 +17,11 @@ export function SelectedTags(props: Props) {
 
   return (
     <View {...otherProps}>
-      <Text variant="bold">{t('Selected Tags')}</Text>
+      <Text variant="bold">{t('选中标签')}</Text>
       <View style={styles.selectedTagsContainer}>
         {selectedTags.length === 0 ? (
           <View style={styles.labelNoSelectedTags}>
-            <Text>{t('No selected tags')}</Text>
+            <Text>{t('没有选中的标签')}</Text>
           </View>
         ) : (
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>

@@ -25,7 +25,7 @@ function BaseSearch(props: Props) {
         testID="Channel:Search:TextInput"
         style={styles.searchTextInput}
         placeholderTextColor={colors.textLight}
-        keyboardType="visible-password" // To remove underline at every words on Android
+        keyboardType="web-search" // To remove underline at every words on Android
         {...textInputProps}
       />
     </View>

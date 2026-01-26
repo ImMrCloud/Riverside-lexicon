@@ -35,11 +35,11 @@ export default function PushNotifications() {
   const Header = () =>
     ios ? (
       <ModalHeader
-        title={t('Push Notifications')}
-        left={<HeaderItem label={t('Back')} left onPressItem={goBack} />}
+        title={t('推送通知')}
+        left={<HeaderItem label={t('返回')} left onPressItem={goBack} />}
       />
     ) : (
-      <CustomHeader title={t('Push Notifications')} />
+      <CustomHeader title={t('推送通知')} />
     );
 
   return (

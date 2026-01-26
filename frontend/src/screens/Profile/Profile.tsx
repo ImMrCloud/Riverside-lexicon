@@ -136,7 +136,7 @@ export default function Profile() {
 
   return (
     <>
-      <CustomHeader title={t('Profile')} />
+      <CustomHeader title={t('个人资料')} />
       <View style={[styles.container, !isTablet && styles.flex]}>
         {!isTablet && <View style={styles.statusBar} />}
 
@@ -174,7 +174,7 @@ export default function Profile() {
                   {allowUserStatus &&
                     (!user.status?.description && !user.status?.emoji ? (
                       <IconWithLabel
-                        label={t('Set Status')}
+                        label={t('设置状态')}
                         icon="Edit"
                         fontStyle={styles.setStatusText}
                         color={colors.textLighter}
@@ -202,7 +202,7 @@ export default function Profile() {
                 style={[styles.tabletHeaderItemContainer, styles.marginLeft]}
               >
                 <Button
-                  content={t('Edit Profile')}
+                  content={t('编辑资料')}
                   disabled={!data}
                   onPress={() => navigateInProfile('EditProfile', { user })}
                   testID="Profile:Button:EditProfile"
@@ -240,7 +240,7 @@ export default function Profile() {
               {allowUserStatus &&
                 (!user.status?.description && !user.status?.emoji ? (
                   <IconWithLabel
-                    label={t('Set Status')}
+                    label={t('设置状态')}
                     icon="Edit"
                     fontStyle={styles.setStatusText}
                     color={colors.textLighter}
@@ -263,7 +263,7 @@ export default function Profile() {
                   />
                 ))}
               <Button
-                content={t('Edit Profile')}
+                content={t('编辑资料')}
                 style={styles.button}
                 disabled={!data}
                 onPress={() => navigateInProfile('EditProfile', { user })}
@@ -278,21 +278,21 @@ export default function Profile() {
               }
             >
               <MenuItem
-                title={t('Notifications')}
+                title={t('通知')}
                 iconName="Notifications"
                 indicator={haveNotification}
                 onPress={() => navigateInProfile('Notifications', undefined)}
               />
               <Divider style={styles.dividerList} />
               <MenuItem
-                title={t('Messages')}
+                title={t('信息')}
                 iconName="Mail"
                 onPress={() => navigateInProfile('Messages', undefined)}
                 testID="Profile:MenuItem:Messages"
               />
               <Divider style={styles.dividerList} />
               <MenuItem
-                title={t('Activity')}
+                title={t('活动')}
                 iconName="Chart"
                 onPress={() => navigateInProfile('Activity', undefined)}
               />
@@ -303,19 +303,19 @@ export default function Profile() {
               }
             >
               <MenuItem
-                title={t('Password & Security')}
+                title={t('密码和安全性')}
                 iconName="Lock"
                 onPress={() => navigateInProfile('ChangePassword', undefined)}
               />
               <Divider style={styles.dividerList} />
               <MenuItem
-                title={t('Linked Accounts')}
+                title={t('关联账号')}
                 iconName="Admin"
                 onPress={() => navigateInProfile('EmailAddress', undefined)}
               />
               <Divider style={styles.dividerList} />
               <MenuItem
-                title={t('Preferences')}
+                title={t('偏好')}
                 iconName="Settings"
                 onPress={() => navigateInProfile('Preferences', undefined)}
               />
@@ -326,7 +326,7 @@ export default function Profile() {
               }
             >
               <MenuItem
-                title={t('Log Out')}
+                title={t('登出')}
                 iconName="Power"
                 iconColor={colors.error}
                 onPress={onLogout}

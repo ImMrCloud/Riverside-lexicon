@@ -62,8 +62,8 @@ export default function EmailAddressItem(props: Props) {
     onCompleted: () => {
       Alert.alert(
         'Success!',
-        t('{emailAddress} has been successfully deleted', { emailAddress }),
-        [{ text: t('Got it') }],
+        t('{emailAddress} 已被成功删除', { emailAddress }),
+        [{ text: t('明白') }],
       );
     },
     onError: (error) => {
@@ -100,11 +100,11 @@ export default function EmailAddressItem(props: Props) {
 
   const showAlert = () =>
     Alert.alert(
-      t('Delete Email?'),
-      t('Are you sure you want to delete this email address?'),
+      t('删除电邮地址？'),
+      t('阁下真的想要删除此电邮地址吗？'),
       [
         {
-          text: t('Cancel'),
+          text: t('取消'),
           onPress: () => {
             if (!ios) {
               setShowOptions(false);
@@ -112,7 +112,7 @@ export default function EmailAddressItem(props: Props) {
           },
         },
         {
-          text: t('Delete'),
+          text: t('删除'),
           onPress: onDeleteEmail,
         },
       ],
@@ -153,12 +153,12 @@ export default function EmailAddressItem(props: Props) {
             <Text>{emailAddress}</Text>
             {type === 'PRIMARY' && (
               <Text size="s" color="textLight" style={styles.primary}>
-                {t('Primary Email Address')}
+                {t('私人电邮地址')}
               </Text>
             )}
             {type === 'UNCONFIRMED' && (
               <Text size="s" color="textLight" style={styles.primary}>
-                {t('Unverified')}
+                {t('未经验证')}
               </Text>
             )}
           </View>
@@ -186,7 +186,7 @@ export default function EmailAddressItem(props: Props) {
                   onPress={onSetPrimaryEmail}
                 >
                   <Text style={styles.text} color="pureBlack" size="s">
-                    {t('Set as primary')}
+                    {t('设置为主要')}
                   </Text>
                 </TouchableOpacity>
               )}
@@ -195,7 +195,7 @@ export default function EmailAddressItem(props: Props) {
                 onPress={showAlert}
               >
                 <Text style={styles.text} color="error" size="s">
-                  {t('Delete')}
+                  {t('删除')}
                 </Text>
               </TouchableOpacity>
             </View>

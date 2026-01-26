@@ -19,12 +19,12 @@ import { ChannelListOutput, StackNavProp } from '../../types';
 
 import { ChannelList, Search } from './components';
 
-const title = t('Live Chat');
+const title = t('实时对话');
 
 let chatSegmentedOption = [
-  { index: 0, name: ChatChannelStatus.All, label: t('All') },
-  { index: 1, name: ChatChannelStatus.Open, label: t('Open') },
-  { index: 2, name: ChatChannelStatus.Closed, label: t('Closed') },
+  { index: 0, name: ChatChannelStatus.All, label: t('全部') },
+  { index: 1, name: ChatChannelStatus.Open, label: t('开启的会话') },
+  { index: 2, name: ChatChannelStatus.Closed, label: t('关闭的会话') },
 ];
 
 type ChatOption = typeof chatSegmentedOption[number];
@@ -245,7 +245,7 @@ export default function ChannelChat() {
         </Text>
       </View>
       <Search
-        placeholder={t('Search')}
+        placeholder={t('搜索')}
         value={searchValue}
         onChangeText={onChangeValue}
       />

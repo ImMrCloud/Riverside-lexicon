@@ -208,9 +208,9 @@ export default function PostDraft() {
 
   const actionItemOptions = () => {
     let options: ActionSheetProps['options'] = [];
-    ios && options.push({ label: t('Cancel') });
-    options.push({ label: t('Edit Draft') });
-    options.push({ label: t('Delete Draft') });
+    ios && options.push({ label: t('取消') });
+    options.push({ label: t('编辑草稿') });
+    options.push({ label: t('删除草稿') });
 
     return options;
   };
@@ -258,8 +258,8 @@ export default function PostDraft() {
               size="s"
               color={!isPrivateMessage ? 'primary' : 'success'}
             >
-              {`${isPrivateMessage ? t('PRIVATE MESSAGE') : t('POST')} ${
-                isReply ? t('REPLY') : ''
+              {`${isPrivateMessage ? t('私密消息') : t('发送')} ${
+                isReply ? t('回复') : ''
               }`}
             </Text>
             {draftTitle && (
@@ -297,7 +297,7 @@ export default function PostDraft() {
   return (
     <>
       <SafeAreaView style={styles.container} testID="PostDraft:SafeAreaView">
-        <CustomHeader title={t('Draft')} hideHeaderLeft noShadow />
+        <CustomHeader title={t('草稿')} hideHeaderLeft noShadow />
         {loadingPostDraft && !data && !loadingRefresh && !loadingMore ? (
           <LoadingOrError loading />
         ) : (
@@ -324,11 +324,11 @@ export default function PostDraft() {
                   variant="bold"
                   style={[styles.textCenter, styles.draftText]}
                 >
-                  {t('Drafts Will Appear Here')}
+                  {t('草稿将会显示再这里')}
                 </Text>
                 <Text style={styles.textCenter}>
                   {t(
-                    'All your posts, replies, and message drafts will be saved here. Start creating today!',
+                    '阁下的帖子、回复及消息草稿均会在此保存。立即开启你的创作之旅。',
                   )}
                 </Text>
               </View>

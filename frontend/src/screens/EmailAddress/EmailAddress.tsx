@@ -75,7 +75,7 @@ export default function EmailAddress() {
     <SafeAreaView style={styles.container}>
       {ios && (
         <CustomHeader
-          title={t('Email Address')}
+          title={t('电邮地址')}
           rightIcon="Add"
           onPressRight={() => navigate('AddEmail')}
           disabled={loading}

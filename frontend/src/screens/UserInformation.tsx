@@ -137,7 +137,7 @@ export default function UserInformation() {
           )}
           <View style={styles.buttonContainer}>
             {currentUser !== username && (
-              <Button content={t('Message')} onPress={onPressNewMessage} />
+              <Button content={t('消息')} onPress={onPressNewMessage} />
             )}
             {
               // TODO: This LoC is meant for the next phase
@@ -152,7 +152,7 @@ export default function UserInformation() {
           </View>
         </View>
         <Text variant={'semiBold'} style={styles.activityText}>
-          {t('Activity')}
+          {t('活动')}
         </Text>
       </>
     );
@@ -189,7 +189,7 @@ export default function UserInformation() {
       <View style={styles.noActivity}>
         <Header />
         <Text style={styles.noActivityText}>
-          {t("This user doesn't have any activity")}
+          {t("这个用户没有任何消息")}
         </Text>
       </View>
     );

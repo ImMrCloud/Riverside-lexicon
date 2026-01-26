@@ -71,8 +71,8 @@ import { ChannelSideBarContent, ChannelSideBarDrawer } from '../Channels';
 import { HomeNavBar, HomeTabletNavBar, SearchBar } from './components';
 
 let sortTypes = {
-  LATEST: { label: () => t('Latest') },
-  TOP: { label: () => t('Top') },
+  LATEST: { label: () => t('最新发布') },
+  TOP: { label: () => t('热门回复') },
 };
 
 let sortOptionsArray = Object.entries(sortTypes).map(
@@ -559,10 +559,10 @@ export default function Home() {
         );
         return channel ? channel.name : '';
       }
-      return t('All Channels');
+      return t('所有频道');
     }
 
-    return t('All Channels');
+    return t('所有频道');
   };
 
   const postContent = () => {
@@ -594,7 +594,7 @@ export default function Home() {
       return <LoadingOrError loading />;
     }
     if (topicsData && topicsData.length < 1) {
-      return <LoadingOrError message={t('No Posts available')} />;
+      return <LoadingOrError message={t('无可用的帖子')} />;
     }
     return (
       <PostList
@@ -666,7 +666,7 @@ export default function Home() {
         )}
         <Animated.View style={[styles.header, headerTranslateY]}>
           <SearchBar
-            placeholder={t('Search posts, categories, etc.')}
+            placeholder={t('搜索阁下想看的帖子')}
             onPressSearch={onPressSearch}
             testID="Home:Button:SearchTopic"
           />

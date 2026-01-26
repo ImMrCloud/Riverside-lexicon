@@ -54,8 +54,8 @@ export default function ChangePassword() {
   const { changeNewPassword, loading, error } = useChangePassword({
     onCompleted: () => {
       Alert.alert(
-        t('Success!'),
-        t('You should receive an email to change your password shortly'),
+        t('成功'),
+        t('阁下应当很快会收到一封修改密码的电子邮件'),
         [{ text: 'Got it' }],
         { cancelable: false },
       );
@@ -85,13 +85,13 @@ export default function ChangePassword() {
     <View style={styles.container}>
       {!ios ? (
         <CustomHeader
-          title={t('Change Password')}
+          title={t('修改密码')}
           hideHeaderLeft={isTabletLandscape}
         />
       ) : (
         <CustomHeader
-          title={t('Change Password')}
-          rightTitle={t('Send')}
+          title={t('修改密码')}
+          rightTitle={t('发送')}
           onPressRight={onPressSend}
           isLoading={loading}
           hideHeaderLeft={isTabletLandscape}
@@ -103,11 +103,11 @@ export default function ChangePassword() {
             {error?.message}
           </Text>
         )}
-        <Text style={styles.disclaimerStyle}>{t('Email')}</Text>
+        <Text style={styles.disclaimerStyle}>{t('电子邮件')}</Text>
         <Text style={styles.spacingBottom}>{user.email}</Text>
         <Text style={styles.disclaimerStyle}>
           {t(
-            'We will send a link to your email address to change your password.',
+            '系统将会向阁下的电子邮件发送一封重置密码的链接',
           )}
         </Text>
       </View>

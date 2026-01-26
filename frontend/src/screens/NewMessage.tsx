@@ -406,10 +406,10 @@ export default function NewMessage() {
   const Header = () =>
     ios ? (
       <ModalHeader
-        title={t('New Message')}
+        title={t('新消息')}
         left={
           <HeaderItem
-            label={t('Cancel')}
+            label={t('取消')}
             onPressItem={goBack}
             left
             disabled={newMessageLoading || loadingCreateAndUpdatePostDraft}
@@ -417,7 +417,7 @@ export default function NewMessage() {
         }
         right={
           <HeaderItem
-            label={t('Send')}
+            label={t('发送')}
             onPressItem={sendMessage}
             disabled={
               !isValid ||
@@ -430,8 +430,8 @@ export default function NewMessage() {
       />
     ) : (
       <CustomHeader
-        title={t('New Message')}
-        rightTitle={t('Send')}
+        title={t('新消息')}
+        rightTitle={t('发送')}
         onPressRight={sendMessage}
         disabled={!isValid || selectedUsers.length === 0}
         noShadow
@@ -528,7 +528,7 @@ export default function NewMessage() {
         >
           <>
             <View style={styles.formContainer}>
-              <Text style={styles.label}>{t('Subject')}</Text>
+              <Text style={styles.label}>{t('主题')}</Text>
               <Controller
                 name="title"
                 defaultValue=""
@@ -546,7 +546,7 @@ export default function NewMessage() {
                       debounceSaveDraft();
                     }}
                     onFocus={() => setShowLeftMenu(false)}
-                    placeholder={t('What do you want to talk about?')}
+                    placeholder={t('阁下想要说点什么？')}
                     placeholderTextColor={colors.darkTextLighter}
                     testID="NewMessage:TextInput:Title"
                     autoCorrect
@@ -558,7 +558,7 @@ export default function NewMessage() {
             <Divider horizontalSpacing="xxl" />
 
             <View style={styles.formContainer}>
-              <Text style={styles.label}>{t('Recipients')}</Text>
+              <Text style={styles.label}>{t('接收人')}</Text>
               <TouchableOpacity
                 style={styles.row}
                 onPress={onPressSelectUser}
@@ -581,7 +581,7 @@ export default function NewMessage() {
                               (length - 1 === 1 ? ' other' : ' others')
                             : '',
                       })
-                    : t('Add a recipient')}
+                    : t('添加一名接收人')}
                 </Text>
                 <Icon name="ChevronRight" color={colors.textLighter} />
               </TouchableOpacity>
@@ -639,7 +639,7 @@ export default function NewMessage() {
                   onSelectedChange={(cursor) => {
                     setCursorPosition(cursor);
                   }}
-                  placeholder={t('Type a message')}
+                  placeholder={t('写点消息')}
                   mentionToggled={showUserList}
                   testID="NewMessage:TextArea"
                 />

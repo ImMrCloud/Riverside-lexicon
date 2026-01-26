@@ -173,20 +173,20 @@ export default function Tags() {
   const Header = () =>
     ios ? (
       <ModalHeader
-        title={t('Add Tags')}
+        title={t('添加标签')}
         left={
-          <HeaderItem label={t('Cancel')} left onPressItem={cancelAddTags} />
+          <HeaderItem label={t('取消')} left onPressItem={cancelAddTags} />
         }
         right={
           <HeaderItem
-            label={t('Done')}
+            label={t('完成')}
             onPressItem={submitTags}
             disabled={currentTagsIds.length === 0 && loading}
           />
         }
       />
     ) : (
-      <CustomHeader title={t('Add Tags')} noShadow />
+      <CustomHeader title={t('添加标签')} noShadow />
     );
 
   return (
@@ -204,13 +204,13 @@ export default function Tags() {
             setSearchValue(value),
             setError(null),
           ]}
-          placeholder={t('Search for relevant tags ...')}
+          placeholder={t('搜索相关标签...')}
           style={styles.searchBar}
         />
         {availableTags.length === 0 && !canCreateTag && !tagsLoading && (
           <AlertBanner
             type="warning"
-            message={t("You don't have permission to create tags")}
+            message={t("阁下没有权限添加这个标签")}
             style={styles.alertBanner}
           />
         )}
@@ -246,7 +246,7 @@ export default function Tags() {
           style={styles.container}
         >
           <Button
-            content={t('Done')}
+            content={t('完成')}
             large
             onPress={submitTags}
             disabled={currentTagsIds.length === 0 && loading}

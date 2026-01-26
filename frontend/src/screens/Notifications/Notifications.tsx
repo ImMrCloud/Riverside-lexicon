@@ -158,7 +158,7 @@ export default function Notifications() {
       return <LoadingOrError loading />;
     }
     if (data?.notificationQuery.totalRowsNotifications === 0) {
-      return <LoadingOrError message={t('No Notifications available')} />;
+      return <LoadingOrError message={t('无可用的通知')} />;
     }
   }
 
@@ -261,7 +261,7 @@ export default function Notifications() {
     <>
       <SafeAreaView style={styles.container}>
         <CustomHeader
-          title={t('Notifications')}
+          title={t('通知')}
           rightIcon="More"
           onPressRight={onPressMore}
           isLoading={markAsReadLoading}
@@ -303,7 +303,7 @@ export default function Notifications() {
                   }}
                 >
                   <Text style={styles.modalText} color="pureBlack" size="l">
-                    {t('Mark All as Read')}
+                    {t('全部已读')}
                   </Text>
                 </TouchableOpacity>
               </View>

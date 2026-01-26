@@ -65,7 +65,7 @@ export default function ChannelItem(props: Props) {
           variant={canJoin ? 'bold' : 'normal'}
           style={canJoin ? styles.buttonText : styles.leaveText}
         >
-          {!hideButtonJoinLeave ? (canJoin ? t('Join') : t('Leave')) : ''}
+          {!hideButtonJoinLeave ? (canJoin ? t('加入') : t('离开')) : ''}
         </Text>
       </TouchableOpacity>
     </View>

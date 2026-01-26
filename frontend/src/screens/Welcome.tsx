@@ -22,20 +22,20 @@ export default function Welcome() {
           resizeMode="contain"
         />
         <Text style={styles.textCenter}>
-          {t('Login or register first to access all of the exciting features.')}
+          {t('通过注册或登录，以便阁下完整访问清水河畔的内容。')}
         </Text>
       </View>
       <Button
-        content={t('Get Started')}
+        content={t('注册/登录')}
         large
         onPress={() => navigate('AuthenticationWebView')}
       />
       <View style={styles.disclaimerContainer}>
         <RNText style={styles.disclaimerStyle}>
-          {t('By clicking this button, you agree to the ')}
-          <RNText style={styles.inlineColor}>{t('privacy policy ')}</RNText>
-          {t('and ')}
-          <RNText style={styles.inlineColor}>{t('terms of service')}</RNText>
+          {t('点击按钮则视为阁下同意 ')}
+          <RNText style={styles.inlineColor}>{t('隐私政策')}</RNText>
+          {t('以及')}
+          <RNText style={styles.inlineColor}>{t('用户服务协议')}</RNText>
         </RNText>
       </View>
     </View>

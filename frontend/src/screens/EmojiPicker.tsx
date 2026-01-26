@@ -54,11 +54,11 @@ export default function EmojiPicker() {
   const Header = () =>
     ios ? (
       <ModalHeader
-        title={t('Emoji')}
-        left={<HeaderItem label={t('Cancel')} left onPressItem={goBack} />}
+        title={t('表情')}
+        left={<HeaderItem label={t('取消')} left onPressItem={goBack} />}
       />
     ) : (
-      <CustomHeader title={t('Emoji')} noShadow />
+      <CustomHeader title={t('表情')} noShadow />
     );
 
   const renderItem = ({ item }: { item: EmojiRenderItem }) => {
@@ -90,7 +90,7 @@ export default function EmojiPicker() {
           onChangeText={(value) => {
             setQuery(generateSlug(value));
           }}
-          placeholder={t('Search for ...')}
+          placeholder={t('搜索...')}
           style={styles.textInput}
           testID="EmojiPicker:TextInput:Search"
         />

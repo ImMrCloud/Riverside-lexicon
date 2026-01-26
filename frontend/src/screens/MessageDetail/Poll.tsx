@@ -24,7 +24,7 @@ export default function Poll() {
   const ios = Platform.OS === 'ios';
 
   const time =
-    createdAt === '' ? t('Loading...') : formatRelativeTime(createdAt);
+    createdAt === '' ? t('加载中...') : formatRelativeTime(createdAt);
 
   const onPressAuthor = (username: string) => {
     navigate('UserInformation', { username });
@@ -38,7 +38,7 @@ export default function Poll() {
     return ios ? (
       <ModalHeader
         title={title}
-        left={<HeaderItem label={t('Close')} left onPressItem={goBack} />}
+        left={<HeaderItem label={t('关闭')} left onPressItem={goBack} />}
       />
     ) : (
       <CustomHeader title={title} noShadow />

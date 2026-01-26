@@ -24,13 +24,13 @@ export default function Preferences() {
           <View style={[styles.menuContainer, !isTablet && styles.marginTop]}>
             {!hasFixedColorScheme && (
               <MenuItem
-                title={t('Dark Mode')}
+                title={t('晚黑')}
                 iconName="Dark"
                 onPress={() => navigate('DarkMode')}
               />
             )}
             <MenuItem
-              title={t('Push Notifications')}
+              title={t('推送通知')}
               iconName="NotificationActive"
               onPress={() => navigate('PushNotificationsPreferences')}
             />

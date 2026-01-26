@@ -58,12 +58,12 @@ export default function AddEmail() {
       setSuccess(true);
       Alert.alert(
         'Success!',
-        t('{newEmail} has been successfully added', {
+        t('{newEmail} 已经被成功添加至阁下的账户', {
           newEmail: getValues('email'),
         }),
         [
           {
-            text: t('Got it'),
+            text: t('明白'),
             onPress: () => {
               if (isTabletLandscape) {
                 navigate('EmailAddress');
@@ -102,13 +102,13 @@ export default function AddEmail() {
     <View style={styles.container}>
       {success || !ios ? (
         <CustomHeader
-          title={t('New Email Address')}
+          title={t('新电邮地址')}
           prevScreen="EmailAddress"
         />
       ) : (
         <CustomHeader
-          title={t('New Email Address')}
-          rightTitle={t('Add')}
+          title={t('新电邮地址')}
+          rightTitle={t('添加')}
           onPressRight={onPressSend}
           disabled={!formState.isValid}
           isLoading={addEmailAddressLoading}
@@ -128,14 +128,14 @@ export default function AddEmail() {
             required: true,
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: t('Invalid email address'),
+              message: t('无效的电邮地址'),
             },
           }}
           control={control}
           render={({ field: { onChange, value } }) => (
             <TextInput
-              label={t('Email Address')}
-              placeholder={t('Insert your email address')}
+              label={t('电邮地址')}
+              placeholder={t('插入阁下的电邮地址')}
               error={errors.email != null}
               errorMsg={errors.email?.message}
               value={value}

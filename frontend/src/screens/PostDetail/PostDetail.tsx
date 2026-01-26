@@ -133,9 +133,9 @@ export default function PostDetail() {
       variables: { topicId, postNumber, includeFirstPost: true },
       onCompleted: ({ topicDetail }) => {
         if (topicDetail.deletedAt) {
-          Alert.alert(t('Error'), t('This topic has been deleted.'), [
+          Alert.alert(t('错误'), t('这篇帖子已经被删除了'), [
             {
-              text: t('Got it'),
+              text: t('明白'),
               onPress: () => {
                 goBack();
               },
@@ -466,11 +466,11 @@ export default function PostDetail() {
 
   const actionItemOptions = () => {
     let options: ActionSheetProps['options'] = [];
-    ios && options.push({ label: t('Cancel') });
-    canEditFocusPost && options.push({ label: t('Edit Post') });
+    ios && options.push({ label: t('取消') });
+    canEditFocusPost && options.push({ label: t('编辑帖子') });
     !flaggedByCommunity &&
       options.push({
-        label: canFlagFocusPost ? t('Flag') : t('Flagged'),
+        label: canFlagFocusPost ? t('举报') : t('已举报'),
         disabled: !canFlagFocusPost,
       });
     return options;
@@ -610,12 +610,12 @@ export default function PostDetail() {
       <LoadingOrError
         message={
           error
-            ? errorHandler(error, true, t('topic'))
+            ? errorHandler(error, true, t('话题'))
             : isLoading
             ? replyLoading
-              ? t('Finishing your Reply')
+              ? t('完成阁下的回复')
               : undefined
-            : t('Post is not available')
+            : t('发表不可用')
         }
       />
     );
@@ -679,7 +679,7 @@ export default function PostDetail() {
           onPress={() => onPressReply()}
           testID="PostDetail:Button:Reply"
         >
-          <Text style={styles.inputComment}>{t('Write your reply here')}</Text>
+          <Text style={styles.inputComment}>{t('在这里写下阁下的回复')}</Text>
         </TouchableOpacity>
       </SafeAreaView>
       <TouchableOpacity>

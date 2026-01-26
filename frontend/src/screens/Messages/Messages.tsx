@@ -177,7 +177,7 @@ export default function Messages() {
   } else if (loading && messages.length < 1) {
     content = <LoadingOrError loading />;
   } else if (!loading && messages.length < 1) {
-    content = <LoadingOrError message={t('You have no messages')} />;
+    content = <LoadingOrError message={t('阁下没有消息')} />;
   } else {
     content = (
       <VirtualizedList
@@ -209,7 +209,7 @@ export default function Messages() {
     <SafeAreaView style={styles.container}>
       {ios && (
         <CustomHeader
-          title={t('Messages')}
+          title={t('消息')}
           rightIcon="Add"
           onPressRight={onPressNewMessage}
           hideHeaderLeft={isTabletLandscape}

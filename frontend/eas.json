@@ -4,6 +4,12 @@
     "appVersionSource": "local"
   },
   "build": {
+    "preview_ios": {
+      "extends": "preview",
+      "ios": {
+        "simulator": false
+      }
+    },
     "test": {
       "channel": "test",
       "android": {
@@ -31,7 +37,10 @@
     },
     "production": {
       "autoIncrement": true,
-      "channel": "production"
+      "channel": "production",
+      "android": {
+        "buildType": "apk"
+      }
     }
   },
   "submit": {

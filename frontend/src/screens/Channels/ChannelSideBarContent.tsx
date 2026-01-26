@@ -44,7 +44,7 @@ export default function ChannelSideBarContent(props: Props) {
           size="xl"
         />
         <Text style={styles.titleText} variant={'bold'} size="xl">
-          {t('Channels')}
+          {t('频道')}
         </Text>
 
         <ScrollView>

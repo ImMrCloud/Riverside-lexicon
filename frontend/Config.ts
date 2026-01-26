@@ -17,7 +17,7 @@ const config: Config = {
    * to EAS Build.
    */
   localDevelopment: {
-    discourseUrl: 'http://localhost:4200',
+    discourseUrl: 'https://river-side.cc',
     inferDevelopmentHost: true, // Specific to local development with Expo Go & the Android simulator. See docs.
   },
   /**
@@ -33,13 +33,13 @@ const config: Config = {
    */
   buildChannels: {
     preview: {
-      discourseUrl: 'http://PLACEHOLDER.change.this.to.your.discourse.url',
+      discourseUrl: 'https://river-side.cc',
     },
     production: {
-      discourseUrl: 'http://PLACEHOLDER.change.this.to.your.discourse.url',
+      discourseUrl: 'https://river-side.cc',
     },
     test: {
-      discourseUrl: 'http://localhost:4200',
+      discourseUrl: 'https://river-side.cc',
     },
   },
 };

@@ -16,7 +16,7 @@ export function useMockPostQuery(delay = 1000, simulateError = false) {
 
     const id = setTimeout(() => {
       if (simulateError) {
-        setError(t('Something unexpected happened'));
+        setError(t('发生了一些错误'));
       }
       setLoading(false);
     }, delay);

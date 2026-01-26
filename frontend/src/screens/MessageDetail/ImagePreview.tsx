@@ -173,8 +173,8 @@ export default function ImagePreview() {
           },
         });
       } else {
-        Alert.alert(t('Failed Upload!'), t(`Please Try Again`), [
-          { text: t('Got it') },
+        Alert.alert(t('上传失败'), t(`请重试`), [
+          { text: t('明白') },
         ]);
       }
     } catch (error) {
@@ -271,7 +271,7 @@ export default function ImagePreview() {
                 onChange(message);
               }}
               showButton
-              inputPlaceholder={t('Write your caption here')}
+              inputPlaceholder={t('位于此处写下阁下想要的标题')}
               loading={loading}
               disabled={loading}
               onPressSend={postToServer}
@@ -317,7 +317,7 @@ export default function ImagePreview() {
                 style={styles.iconChart}
               />
               <Text color="pureWhite">
-                {t('Poll ({total})', { total: polls.length })}
+                {t('投票 ({total})', { total: polls.length })}
               </Text>
             </TouchableOpacity>
           )}
