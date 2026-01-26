@@ -1,193 +1,126 @@
-## Lexicon
+## Riverside Lexicon
 
-Lexicon is a customizable, open source mobile **App Template** that provides an elegant mobile discussions experience. Built on top of [Discourse](https://www.discourse.org), a platform for communities.
+Riverside Lexicon is a customized mobile application based on the open-source project Lexicon (https://github.com/lexiconhq/lexicon).
 
-### Benefits
+Riverside Lexicon 是一个基于开源项目 Lexicon 二次开发的移动端应用，针对 **清水河畔** 需求进行了定制与扩展。
 
-- Launch a mobile app customized for your Discourse site
-- Increase engagement with your users by adding a mobile experience
-- Built with React Native: designed from the ground up for a mobile first experience - no webviews!
+------
 
-### Project Roadmap
+## About / 关于项目
 
-Lexicon is currently under active development. You can stay up to date on the features we're working on by viewing the [Project Roadmap](https://github.com/orgs/lexiconhq/projects/1/views/1).
+Lexicon is a customizable, open source mobile App Template built on top of Discourse (https://www.discourse.org).
 
-### Discussions
+Lexicon 是一个基于 Discourse 平台构建的开源移动端应用模板。
 
-For more detailed information, updates, and discussions, please visit the [Lexicon Discussions](https://github.com/lexiconhq/lexicon/discussions) section on GitHub.
+This repository contains modifications and extensions tailored for **Riverside community** usage.
 
-## Installation
+本仓库包含在 Lexicon 基础上为 **清水河畔** 社区定制开发的功能与改进。
 
-Clone the repository and navigate into it:
+------
 
-```
-git clone git@github.com:lexiconhq/lexicon.git
-cd lexicon
-```
+## Features / 功能特点
 
-Next, execute the following command.
+- Mobile client based on Discourse API
+- Customized UI and user experience
+- React Native + TypeScript
+- Yarn for dependency management
+- 基于 Discourse API 的移动端客户端
+- 定制化 UI 与用户体验
+- 使用 React Native + TypeScript
+- 使用 Yarn 进行依赖管理
 
-```
-$ yarn && yarn generate
-```
+------
 
-`yarn` will install the dependencies needed, while `yarn generate` will launch two processes sequentially.
+## Installation / 安装与运行
 
-- First, it will generate a GraphQL [schema](https://nexusjs.org/docs/guides/schema) in the `api` directory.
+Clone the repository:
 
-- Then it will create a new folder called `generated` in the `frontend` directory. This contains the GraphQL query and mutation types based on the schema generated above. Click [here](https://github.com/apollographql/apollo-tooling#apollo-clientcodegen-output) to learn more about this process.
+克隆仓库：
 
-## Quick Start
+git clone https://github.com/ImMrCloud/Riverside-lexicon.git
+ cd Riverside-lexicon
 
-You can run the Lexicon Mobile App and test it out by running this command from the project root:
+Install dependencies and generate GraphQL schema:
 
-```
-$ yarn quickstart
-```
+安装依赖并生成 GraphQL schema：
 
-This will simultaneously launch two processes:
+yarn && yarn generate
 
-- The Prose GraphQL API Server
-- The local Expo dev server, which will enable you to launch the React Native app from your device
+------
 
-The `quickstart` commands are designed to point at an existing **public** Discourse server, [Discourse Meta](https://meta.discourse.org).
+Quick Start / 快速开始
 
-Configuring it to point at your own Discourse site will take additional configuration.
+Run the backend API and frontend app:
 
-We guide you through the basics of this in the next section below.
+启动后端 API 与前端应用：
 
-You can also learn more about this process in detail in the [Lexicon Documentation](https://docs.lexicon.is/quick-start).
+Start API server:
+ yarn --cwd api start
 
-## Example: Specifying a custom Discourse Site URL
+Start frontend app:
+ cd frontend
+ yarn start
 
-This is a brief example to demonstrate how to quickly point the project at a custom Discourse site.
+Scan the QR code with Expo Go on your mobile device to open the app.
 
-In the example below, we'll use the [Rust Users forum](https://users.rust-lang.org).
+使用 Expo Go 扫描二维码即可在手机上运行应用。
 
-You can also follow along using your own site if you'd like.
+------
 
-After running `yarn && yarn generate` from the project root, execute the following:
+## Configuration / 配置说明
 
-```
-$ echo "PROSE_DISCOURSE_HOST=https://users.rust-lang.org" > api/.env
-```
+You can configure the Discourse server URL in:
 
-The above command sets the required environment variable for the Prose GraphQL API.
+你可以在以下文件中配置 Discourse 服务器地址：
 
-Next, open up `frontend/Config.ts`, and set the value at `config.localDevelopment.proseUrl` to `http://localhost`.
+frontend/Config.ts
 
-```ts
-const config = {
-  localDevelopment: {
-    proseUrl: 'http://localhost',
-  },
-  // ...
-};
-```
+Example:
 
-This instructs the frontend to attempt to connect to a Prose GraphQL API running at `http://localhost`.
+localDevelopment:
+ proseUrl: http://localhost
 
-To bring it all together:
+------
 
-- The frontend (via `localDevelopment.proseUrl`) has been instructed to connect to a Prose GraphQL API running at `http://localhost` (port 80).
+## Acknowledgements / 致谢
 
-- The Prose GraphQL API (via `PROSE_DISCOURSE_HOST`) has been instructed to connect to a Discourse instance at `https://users.rust-lang.org`.
+This project is derived from the open-source project:
 
-- When you launch the Mobile App via [Expo Go](https://expo.dev/client), it will reach out to the API running at `http://localhost`, which will contact the Discourse server at `https://users.rust-lang.org`, and the content of that server will appear in the Mobile App.
+本项目基于以下开源项目二次开发：
 
-### Important Notes
+Lexicon
+ https://github.com/lexiconhq/lexicon
+ License: MIT License
 
-The API's default config instructs the server to listen on a hostname of `0.0.0.0` (the public interface) and port 80.
+Original authors: LexiconHQ
+ 原始作者：LexiconHQ
 
-<details><summary>The frontend takes some additional steps so that you can test the app with Expo Go on your mobile device... <b>(Read More)</b></summary>
+------
 
-This may seem confusing at first, but it actually saves you a bit of time.
+## License / 开源协议
 
-In this scenario, the frontend app is running on your mobile device via Expo Go, and the Prose GraphQL API is running on your development machine (e.g., your laptop).
+This project is licensed under the MIT License.
 
-So, how could we expect the mobile app to be able to locate a server running on a different device, when we have only told the frontend app to attempt to connect to the API on `localhost`? The API isn't running on your mobile device.
+本项目遵循 MIT 开源协议。
 
-The traditional way to deal with this is to force you to manually lookup your local IP address on the network that your mobile device is also connected to. It would be a value like `192.168.0.53`.
+Original work Copyright (c) LexiconHQ
+ Modifications Copyright (c) 2026 ImMrCloud
 
-Then, you'd have to update `frontend/Config.ts` with that value.
+See the LICENSE file for details.
+ 详细信息请参阅 LICENSE 文件。
 
-Even worse, if your local IP address ever changes, everything would break, and you'd have to update the environment variable again.
+------
 
-That's kind of a pain, and fortunately Expo provides us with an easier way.
+## Documentation / 文档
 
-We leverage a property from Expo called `debuggerHost` in order to automatically locate the IP address of your development machine. From that value, we strip off the port number (typically 19000) and append the port number that your Prose GraphQL API is running on (defaults to port 80).
+Original Lexicon documentation:
+ Lexicon 官方文档：
+ https://docs.lexicon.is
 
-With this approach, it should all just work automatically.
+------
 
-If you're interested, you can read the code for how we achieve this here: [src/frontend/constants/app.ts](https://github.com/lexiconhq/lexicon/blob/master/frontend/src/constants/app.ts#L30-L46)
+Contributing / 贡献
 
-</details>
+Pull requests and issues are welcome.
 
-### Start the Prose GraphQL API server
-
-Next, start the Prose GraphQL API server.
-
-```
-$ yarn --cwd api start
-```
-
-You should see output that looks similar to this:
-
-```
-Attempting to reach your Discourse instance at https://users.rust-lang.org...
-Your Discourse instance was reachable and valid.
-
-
- -- Prose GraphQL Discourse API --
-forwarding Discourse requests to https://users.rust-lang.org
-
-💡   🧘 Yoga -   Running GraphQL Server at http://0.0.0.0:8999/graphql
-```
-
-### Start Expo Go to run the frontend app
-
-After that, **in a separate shell**, start Expo to run the frontend app:
-
-```
-$ cd frontend
-$ yarn start
-```
-
-You should see the typical Expo output with a QR code that you can scan from your mobile device to open the app, as well as some output similar to this:
-
-```
-Starting project at lexicon/frontend
-Starting Metro Bundler
-...
-
-› Metro waiting on exp://192.168.0.53:19000
-› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
-
-...
-
-Logs for your project will appear below. Press Ctrl+C to exit.
-Started Metro Bundler
-```
-
-### Scan the QR code and open the app on your mobile device
-
-Once you've scanned the QR code on your mobile device, you will be instructed to download Expo / Expo Go if you haven't already.
-
-After that, you should be able to open the Lexicon frontend on your mobile device via the QR code, and will be able to interact with the Discourse site you configured Prose to connect to.
-
----
-
-## Professional Support
-
-With official support, you get expert help straight from the core team. We provide dedicated support, prioritize feature requests, deployment strategies, advice on best practices, design decisions, and team augmentation. Reach out to us for consulting at support@kodefox.com.
-
-## Documentation
-
-The full documentation for Lexicon is located at [docs.lexicon.is](https://docs.lexicon.is).
-
-If you'd like to contribute to it, or just want to browse it locally, you can run the following command from the project root:
-
-```
-yarn docs:install
-yarn docs:start
-```
+欢迎提交 Issue 与 Pull Request。
