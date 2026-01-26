@@ -119,7 +119,7 @@ Original Lexicon documentation:
 
 ------
 
-Contributing / 贡献
+## Contributing / 贡献
 
 Pull requests and issues are welcome.
 
