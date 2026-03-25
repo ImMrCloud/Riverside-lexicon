@@ -1,3 +1,5 @@
+#由于已有较好现成客户端 故**停止维护**
+
 ## Riverside Lexicon
 
 Riverside Lexicon is a customized mobile application based on the open-source project Lexicon (https://github.com/lexiconhq/lexicon).
